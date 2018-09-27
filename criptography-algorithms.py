@@ -1,4 +1,22 @@
-def vigenere_algorithm(alphabet = [], message = "", key = "", method = "encrypt"):
+def caesar_cipher(alphabet = [], message = "", key = 0, method = "decrypt"):
+    message_result = ""
+    alphabet_len = len(alphabet)
+    
+    for character in message:
+        key_idx = key
+        if method == "decrypt":
+            key_idx *= -1
+            
+        new_char_idx = alphabet.index(character)+key_idx
+        
+        if new_char_idx < 0 or new_char_idx >= alphabet_len:
+            new_char_idx %= alphabet_len
+
+        message_result += alphabet[new_char_idx]
+        
+    return message_result
+
+def vigenere_algorithm(alphabet = [], message = "", key = "", method = "decrypt"):
     message_result = ""
     alphabet_len = len(alphabet)
     i = 0
