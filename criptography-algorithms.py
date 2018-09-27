@@ -16,7 +16,7 @@ def caesar_cipher(alphabet = [], message = "", key = 0, method = "decrypt"):
         
     return message_result
 
-def vigenere_algorithm(alphabet = [], message = "", key = "", method = "decrypt"):
+def vigenere_cipher(alphabet = [], message = "", key = "", method = "decrypt"):
     message_result = ""
     alphabet_len = len(alphabet)
     i = 0
